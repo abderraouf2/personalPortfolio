@@ -69,7 +69,7 @@ export default function Footer() {
       </div>
       <hr className="w-[50%] my-[1rem] mx-[auto] border-t-[#808080]" />
       <h6 className="text-[#808080] text-[1.3rem] text-center ">
-        © 2021 - Template developed by{" "}
+        © 2024 - Template developed by{" "}
         <a
           href="https://github.com/abderraouf2"
           target="_blank"
