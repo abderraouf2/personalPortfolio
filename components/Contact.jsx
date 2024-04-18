@@ -167,7 +167,7 @@ export default function Contact() {
           </a>
         </span>
         <CalendlyPopup
-          url="https://calendly.com/mimoune-abderraouf/cyber-labs-meeting"
+          url="https://calendly.com/mimoune-abderraouf/web-summit-connections"
           isOpen={isCalendlyOpen}
           onClose={() => {
             setIsCalendlyOpen(false);
