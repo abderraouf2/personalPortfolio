@@ -55,11 +55,20 @@ export default function About() {
               className="px-[.5rem]"
             >
               <p className="text-[1.6rem] text-center mb-[1rem] sm:text-left">
-                This is where you can describe about yourself. The more you
-                describe about yourself, the more chances you have!
+                Passionate software engineer proficient in JavaScript and
+                Python. Skilled in developing sleek web applications and robust
+                backend systems. With a proactive approach and commitment to
+                continuous learning, I tackle challenges head-on, expanding my
+                skill set. Creative and perseverant, I deliver high-quality
+                solutions exceeding expectations. Thriving in dynamic
+                environments, I excel in collaboration and innovation. Let's
+                bring your ideas to life!
               </p>
               <p className="text-[1.6rem] text-center mb-[1rem] sm:text-left">
-                Extra Information about you! like hobbies and your goals.{" "}
+                In my spare time, I'm either hitting the gym or taking solo
+                night rides. Fitness enthusiast and calisthenics lover.
+                Professionally, I aim to help companies develop tailored
+                solutions and build a game-changing SaaS platform.{" "}
               </p>
             </motion.div>
             <motion.span
