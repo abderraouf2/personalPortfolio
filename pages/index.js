@@ -42,6 +42,8 @@ export default function Home() {
           href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" href="/assets/profile-pic.png" type="image/png" />
+        <title>Abderraouf - Mimoune</title>
       </Head>
       <div>
         <Banner />
