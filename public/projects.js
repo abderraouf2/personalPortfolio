@@ -1,5 +1,15 @@
 export const projects = [
   {
+    id: 6,
+    title: "Stocktide",
+    image: "/assets/images/stocktide.png",
+    technologies: ["NextJS", "MongoDB", "ExpressJS", "nodejs", "TailwindCSS"],
+    description:
+      "StockTide is a cloud-based inventory management SaaS designed for real-time tracking of inventory, sales, and purchases. It supports multi-store management, ensuring efficient operations across locations. With a user-friendly interface and strong data security, StockTide simplifies inventory setup and management. Tailored for businesses of all sizes, it offers flexible plans to boost productivity and control.",
+    github: "",
+    link: "https://stocktide.app/",
+  },
+  {
     id: 1,
     title: "CyberLabs landing page",
     image: "/assets/images/cyberlabs.png",
