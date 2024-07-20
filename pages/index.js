@@ -6,7 +6,7 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Lenis from "@studio-freight/lenis";
-
+import Link from "next/link";
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -46,6 +46,13 @@ export default function Home() {
         <title>Abderraouf - Mimoune</title>
       </Head>
       <div>
+        <div className="fixed top-10 left-0 w-full px-[2%] flex gap-8 justify-end items-center">
+          <Link href="/blogs">
+            <button className="text-[20px] font-[600] hover:text-[#3AC4AC] duration-300">
+              .Blogs
+            </button>
+          </Link>
+        </div>
         <Banner />
         <About />
         <Projects />
