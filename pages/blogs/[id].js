@@ -7,6 +7,30 @@ import Lenis from "@studio-freight/lenis";
 import styles from "@/styles/Blogs.module.scss";
 import Link from "next/link";
 
+export const metadata = {
+  openGraph: {
+    title: "Next.js",
+    description: "The React Framework for the Web",
+    url: "https://nextjs.org",
+    siteName: "Next.js",
+    images: [
+      {
+        url: "https://nextjs.org/og.png",
+        width: 800,
+        height: 600,
+      },
+      {
+        url: "https://nextjs.org/og-alt.png",
+        width: 1800,
+        height: 1600,
+        alt: "My custom alt",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
+
 export default function index() {
   const router = useRouter();
   const [blog, setBlog] = useState({});
@@ -69,7 +93,16 @@ export default function index() {
           rel="stylesheet"
         />
         <link rel="icon" href="/assets/profile-pic.png" type="image/png" />
-        <title>Abderraouf - Mimoune</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content={blog.description} />
+        <meta property="og:title" content={blog.title} />
+        <meta property="og:description" content={blog.description} />
+        <meta property="og:image" content={blog.bannerImg} />
+        <meta
+          property="og:url"
+          content={`https://abderraouf.dev/blogs/${BlogId}`}
+        />
+        <title>Abderraouf - Mimoune | {blog.title}</title>
       </Head>
       <div>
         <div className="fixed top-10 left-0 w-full px-[2%] flex gap-8 justify-end items-center">
