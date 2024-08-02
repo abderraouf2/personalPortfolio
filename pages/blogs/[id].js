@@ -102,7 +102,14 @@ export default function index() {
           property="og:url"
           content={`https://abderraouf.dev/blogs/${BlogId}`}
         />
-        <title>Abderraouf - Mimoune | {blog.title}</title>
+
+        {/* <!-- Twitter Meta Tags --> */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={blog.title} />
+        <meta name="twitter:description" content={blog.description} />
+        <meta name="twitter:image" content={blog.bannerImg} />
+
+        <title>Abderraouf - Mimoune || {blog.title}</title>
       </Head>
       <div>
         <div className="fixed top-10 left-0 w-full px-[2%] flex gap-8 justify-end items-center">
