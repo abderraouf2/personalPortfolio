@@ -41,4 +41,14 @@
       text-decoration: underline;
     }
   }
+
+  pre .ql-syntax {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    background-color: #2e2e2e; // Dark background for code block
+    color: #f8f8f2; // Light text color for readability
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto; // Handle overflow for wide code blocks
+  }
 }

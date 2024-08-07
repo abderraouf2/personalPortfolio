@@ -12,6 +12,8 @@ const modules = {
     [{ list: "ordered" }, { list: "bullet" }],
     ["link", "image"],
     ["clean"],
+    ["blockquote", "code-block"],
+    [{ align: [] }],
   ],
 };
 
@@ -26,6 +28,8 @@ const formats = [
   "bullet",
   "link",
   "image",
+  "code-block",
+  "blockquote",
 ];
 
 const TextEditor = (props) => {

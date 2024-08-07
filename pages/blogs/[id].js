@@ -124,7 +124,7 @@ export default function index() {
             </button>
           </Link>
         </div>
-        <div className="mt-[20%] w-full px-[2%] xs:px-[5%] md:px-[10%] l:px-[20%]">
+        <div className="mt-[20%] w-full px-[2%] xs:px-[5%] md:px-[10%] l:mt-[10%] l:px-[20%]">
           <h1 className="m-auto text-[28px] font-[600] md:text-[36px] l:text-[42px] text-center">
             {" "}
             {blog.title}{" "}
