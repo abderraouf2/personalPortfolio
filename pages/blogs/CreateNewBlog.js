@@ -3,5 +3,9 @@ import AddBlog from "@/components/addBlog/AddBlog";
 import Image from "next/image";
 
 export default function CreateNewBlog() {
-  return <div>{/* <AddBlog /> */}</div>;
+  return (
+    <div>
+      <AddBlog />
+    </div>
+  );
 }

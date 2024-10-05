@@ -7,6 +7,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Lenis from "@studio-freight/lenis";
 import Link from "next/link";
+
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
