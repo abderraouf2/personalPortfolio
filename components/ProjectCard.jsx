@@ -63,9 +63,21 @@ export default function ProjectCard({ project }) {
   };
 
   return (
-    <div className="w-full max-w-[540px] mx-[auto] mb-[4rem] flex flex-col-reverse sm:max-w-[720px] l:flex-row-reverse l:max-w-[960px]  lg:max-w-[1140px] xl:max-w-[1320px] relative">
+    <div
+      className="w-full max-w-[540px] mx-[auto] mb-[4rem] flex flex-col-reverse sm:max-w-[720px] l:flex-row-reverse l:max-w-[960px]  lg:max-w-[1140px] xl:max-w-[1320px] relative"
+      style={{
+        background:
+          "rgba(255, 255, 255, 0.2)" /* Semi-transparent background */,
+        backdropFilter: 'blur("8px")' /* Frosted glass effect */,
+        border: "1px solid rgba(255, 255, 255, 0.3)" /* Subtle border */,
+        borderRadius: "12px" /* Rounded corners for smoothness */,
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)" /* Soft shadow for depth */,
+        padding: "16px" /* Spacing inside the card */,
+        color: "#FFFFFF" /* White text for contrast */,
+      }}
+    >
       <motion.div
-        className="px-[.5rem] mb-[3.2rem] relative l:w-[66.66%]"
+        className="px-[.5rem]  relative l:w-[66.66%]"
         style={{ position: "relative", display: "inline-block" }}
         ref={ref}
         initial={{ opacity: 0, x: 20 }}
@@ -120,7 +132,7 @@ export default function ProjectCard({ project }) {
           {link && (
             <p>
               <a
-                className="w-[fit-content] h-[fit-content] py-[0.8rem] px-[1.6rem] text-center text-[1.6rem] font-bold text-[#3AC4AC] border-2 border-[#3AC4AC] "
+                className="w-[fit-content] h-[fit-content] py-[0.8rem] px-[1.6rem] text-center text-[1.6rem] font-bold text-[#A8C8A8] border-2 border-[#A8C8A8] "
                 style={{
                   animation: "exampleAnimation .8s ease-in-out",
                   lineHeight: "1",
@@ -136,7 +148,7 @@ export default function ProjectCard({ project }) {
           {github && (
             <a
               target="_blank"
-              className="w-[fit-content] h-[fit-content] py-[0.8rem] px-[1.6rem] text-center text-[1.6rem] font-bold text-[#3AC4AC]"
+              className="w-[fit-content] h-[fit-content] py-[0.8rem] px-[1.6rem] text-center text-[1.6rem] font-bold text-[#A8C8A8]"
               href={github}
             >
               Source Code

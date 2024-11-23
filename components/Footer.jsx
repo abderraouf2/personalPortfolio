@@ -73,7 +73,7 @@ export default function Footer() {
         <a
           href="https://github.com/abderraouf2"
           target="_blank"
-          className="hover:text-[#3ac4ac] duration-300"
+          className="hover:text-[#587858] duration-300"
         >
           Abderraouf Mimoune
         </a>

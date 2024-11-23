@@ -17,7 +17,7 @@ export default function About() {
   return (
     <div
       id="about"
-      className="text-white bg-[#02aab0] flex justify-center bg px-[1rem] py-[5rem] pb-[10%] bg-gradient-to-br from-[#02aab0] to-[#3AC4AC] clip-path-polygon lg:clip-path-none lg:clip-path-polygon-lg"
+      className="text-white bg-[#587858] flex justify-center bg px-[1rem] py-[5rem] pb-[10%] clip-path-polygon lg:clip-path-none lg:clip-path-polygon-lg"
     >
       <div className="max-w-[1320px]">
         <motion.h2
@@ -36,12 +36,12 @@ export default function About() {
             initial={{ opacity: 0, x: -10 }}
             animate={controls}
             transition={{ duration: 0.5, delay: 0.8 }}
-            className="w-[100%] flex justify-center pb-[6.4rem] sm:pb-0 sm:w-[50%] relative"
+            className="w-[100%] h-fit flex justify-center pb-[6.4rem] sm:pb-0 sm:w-[50%] relative"
           >
             <Image
               src="/assets/profile-pic.png"
               width={300}
-              height={200}
+              height={300}
               className="max-w-[100%]"
               alt="rofile pic"
             />
@@ -52,7 +52,7 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={controls1}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="px-[.5rem]"
+              className="px-[.5rem] text-[#FFFFFF]"
             >
               <p className="text-[1.6rem] text-center mb-[1rem] sm:text-left">
                 Passionate software engineer proficient in JavaScript. Skilled
@@ -83,7 +83,7 @@ export default function About() {
                   animation: "exampleAnimation .8s ease-in-out",
                   // animationDelay: ".1s",
                 }}
-                href="http://localhost:3000/cv_Abderraouf.pdf"
+                href="http://localhost:3000/FullStack_CV_ABDERRAOUF.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >

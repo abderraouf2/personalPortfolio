@@ -13,10 +13,6 @@ export default function Home() {
   useEffect(() => {
     const lenis = new Lenis();
 
-    lenis.on("scroll", (e) => {
-      console.log(e);
-    });
-
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -47,9 +43,9 @@ export default function Home() {
         <title>Abderraouf - Mimoune</title>
       </Head>
       <div>
-        <div className="fixed top-10 left-0 w-full px-[2%] flex gap-8 justify-end items-center">
+        <div className="fixed top-10 z-10 left-0 w-full px-[2%] flex gap-8 justify-end items-center">
           <Link href="/blogs">
-            <button className="text-[20px] font-[600] hover:text-[#3AC4AC] duration-300">
+            <button className="text-[20px] font-[600] hover:text-[#ffce08] duration-300">
               .Blogs
             </button>
           </Link>

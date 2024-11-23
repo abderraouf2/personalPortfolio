@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
 root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -24,9 +24,12 @@ root {
 
 html {
   font-size: 62.5%;
+  background-color: #182018;
+  color: #c8c8c8;
 }
 * {
-  font-family: Montserrat, sans-serif;
+  font-family: "Geist Mono", monospace;
+  font-weight: 100;
 }
 
 @keyframes exampleAnimation {
@@ -63,7 +66,7 @@ p a::after {
   left: 0%;
   width: 0%;
   height: 100%;
-  background-color: #3ac4ac;
+  background-color: #587858;
   transition: width 0.2s ease-in-out;
 }
 p a:hover {
@@ -92,7 +95,7 @@ span a::after {
   transition: width 0.2s ease-in-out;
 }
 span a:hover {
-  color: #3ac4ac;
+  color: #587858;
 }
 span a:hover::after {
   width: 100%;

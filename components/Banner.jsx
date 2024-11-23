@@ -1,73 +1,50 @@
 import React from "react";
-import { motion } from "framer-motion";
+import AnimatedText from "./AnimatedText";
+import { CiGlobe } from "react-icons/ci";
+import { FiArrowDownRight } from "react-icons/fi";
+import ThreeDModel from "./ThreeDAnimation/ThreeDModel";
+
 export default function Banner() {
-  function scrollTo(element, to, duration) {
-    const start = element.scrollTop;
-    const change = to - start;
-    const startTime = performance.now();
-
-    function animateScroll(timestamp) {
-      const elapsed = timestamp - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const easedProgress = easeInOut(progress); // Apply easing function
-      element.scrollTop = start + change * easedProgress;
-
-      if (elapsed < duration) {
-        window.requestAnimationFrame(animateScroll);
-      }
-    }
-
-    // Easing function (example using easeInOut)
-    function easeInOut(t) {
-      return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-    }
-    window.requestAnimationFrame(animateScroll);
-  }
-
   return (
-    <div
-      id="top"
-      className="w-full h-[100vh] flex items-center justify-start md:p-[5.6rem]"
-    >
-      <motion.div
-        className="w-full p-2 flex flex-col items-center md:mx-[5%] md:items-start"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <motion.h1
-          className="text-[3.5rem] block mb-[3.2rem] leading-[1.5] text-center md:text-left md:text-[4rem] lg:text-[5.6rem] md:leading-[1.2]"
-          style={{
-            fontWeight: "700",
-          }}
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          Hi, my name is <span className="text-[#3AC4AC]">Abderraouf</span>
-          <br />
-          I'm the Unknown Developer.
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <a
-            href="#about"
-            className="w-[fit-content] h-[fit-content] py-[0.8rem] px-[1.6rem] text-center text-[2rem] font-bold text-[#3AC4AC]   border-2 border-[#3AC4AC] md:text-[2.4rem]"
-            onClick={(e) => {
-              e.preventDefault();
-              setTimeout(() => {
-                const aboutSection = document.getElementById("about");
-                scrollTo(document.documentElement, aboutSection.offsetTop, 800);
-              }, 300);
-            }}
-          >
-            Know More
-          </a>
-        </motion.p>
-      </motion.div>
-    </div>
+    <>
+      <div id="top" className="w-full overflow-x-hidden  md:py-[5.6rem] px-0">
+        <AnimatedText />
+        <div className="absolute mt-10 md:mt-0 left-0 top-0 w-full overflow-hidden h-[500px] flex items-center justify-center">
+          {/* <ThreeScene /> */}
+          <ThreeDModel />
+          {/* <iframe
+            id="landing-model"
+            title="A 3D model of a shoe"
+            class="hero__iframe"
+            width="400"
+            height="400"
+            src="https://sketchfab.com/models/7971770a9dc6443d9a66dd249e81965e/embed?autostart=1&internal=1&tracking=0&ui_infos=0&ui_snapshots=1&ui_stop=0&ui_theatre=1&ui_watermark=0"
+            // frameborder="0"
+            // allow="autoplay; fullscreen; xr-spatial-tracking"
+            allowfullscreen=""
+            // mozallowfullscreen="true"
+            // webkitallowfullscreen="true"
+            // xr-spatial-tracking="true"
+            // execution-while-out-of-viewport="true"
+            // execution-while-not-rendered="true"
+            // web-share="true"
+          ></iframe> */}
+        </div>
+        <div className="hidden md:flex  absolute top-[35%] left-0 translate-y-[-50%] h-[100px] w-[280px] bg-[#305230] rounded-r-full flex items-center p-4">
+          <h2 className="text-[2rem] w-[180px] mx-0">Located in Algeria</h2>
+          <div className="w-[80px] h-[80px] rounded-full bg-[#182018] flex items-center justify-center">
+            <CiGlobe size={40} />
+          </div>
+        </div>
+        <div className="absolute top-14 -left-6 md:top-[30%] md:left-[70%] translate-y-[-50%] h-[100px]  rounded-r-full flex md:flex-col items-center md:items-start p-4">
+          <div className="w-[80px] h-[80px] rounded-full bg-[#182018] flex items-center justify-center">
+            <FiArrowDownRight size={40} />
+          </div>
+          <h2 className="text-[1.5rem] md:text-[3rem] -mx-4 md:mx-8">
+            Freelance <br /> software engineer
+          </h2>
+        </div>
+      </div>
+    </>
   );
 }

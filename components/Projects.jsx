@@ -19,7 +19,7 @@ export default function Projects() {
         initial={{ opacity: 0, x: -10 }}
         animate={controls}
         transition={{ duration: 0.5, delay: 0.4 }}
-        className="text-[#272341] text-[2.8rem] mb-[4.5rem] text-center xs:text-[4rem]"
+        className="text-[#FFFFFF] text-[2.8rem] mb-[4.5rem] text-center xs:text-[4rem]"
         style={{ fontWeight: "700" }}
       >
         PROJECTS
