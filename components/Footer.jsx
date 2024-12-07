@@ -50,7 +50,7 @@ export default function Footer() {
             <FaTwitter />
           </a>
           <a
-            href="https://www.linkedin.com/in/abderraouf-mimoune-2290971a4/"
+            href="https://www.linkedin.com/in/abderraouf-mimoune/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex justify-center items-center w-[5rem] h-[5rem] text-[#fff] text-[3rem] m-[1.6rem]"
