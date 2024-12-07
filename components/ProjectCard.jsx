@@ -73,7 +73,7 @@ export default function ProjectCard({ project }) {
         borderRadius: "12px" /* Rounded corners for smoothness */,
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)" /* Soft shadow for depth */,
         padding: "16px" /* Spacing inside the card */,
-        color: "#FFFFFF" /* White text for contrast */,
+        color: "#c8c8c8" /* White text for contrast */,
       }}
     >
       <motion.div
@@ -132,7 +132,7 @@ export default function ProjectCard({ project }) {
           {link && (
             <p>
               <a
-                className="w-[fit-content] h-[fit-content] py-[0.8rem] px-[1.6rem] text-center text-[1.6rem] font-bold text-[#A8C8A8] border-2 border-[#A8C8A8] "
+                className="w-[fit-content] h-[fit-content] py-[0.8rem] px-[1.6rem] text-center text-[1.6rem] font-bold text-[#ffce08] border-2 border-[#ffce08] "
                 style={{
                   animation: "exampleAnimation .8s ease-in-out",
                   lineHeight: "1",
@@ -148,7 +148,7 @@ export default function ProjectCard({ project }) {
           {github && (
             <a
               target="_blank"
-              className="w-[fit-content] h-[fit-content] py-[0.8rem] px-[1.6rem] text-center text-[1.6rem] font-bold text-[#A8C8A8]"
+              className="w-[fit-content] h-[fit-content] py-[0.8rem] px-[1.6rem] text-center text-[1.6rem] font-bold text-[#ffce08]"
               href={github}
             >
               Source Code

@@ -26,7 +26,7 @@ export default function Footer() {
     window.requestAnimationFrame(animateScroll);
   }
   return (
-    <div className="bg-[#333] py-[4.8rem]">
+    <div className=" py-[4.8rem]">
       <div className="w-[100%] mx-[auto] text-white">
         <a
           href="#top"
@@ -73,7 +73,7 @@ export default function Footer() {
         <a
           href="https://github.com/abderraouf2"
           target="_blank"
-          className="hover:text-[#587858] duration-300"
+          className="hover:text-[#ffce08] duration-300"
         >
           Abderraouf Mimoune
         </a>

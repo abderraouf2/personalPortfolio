@@ -3,6 +3,7 @@ import Head from "next/head";
 import Banner from "@/components/Banner";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
+import Services from "@/components/Services";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Lenis from "@studio-freight/lenis";
@@ -50,9 +51,12 @@ export default function Home() {
             </button>
           </Link>
         </div>
-        <Banner />
+        <div className="overflow-hidden">
+          <Banner />
+        </div>
         <About />
         <Projects />
+        <Services />
         <Contact />
         <Footer />
       </div>

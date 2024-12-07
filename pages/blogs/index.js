@@ -5,6 +5,7 @@ import BlogCard from "@/components/BlogCard";
 import Lenis from "@studio-freight/lenis";
 import Link from "next/link";
 import PageLoader from "@/components/loader/PageLoader";
+import Footer from "@/components/Footer";
 
 export default function index() {
   const [isLoading, setIsLoading] = useState(true);
@@ -75,7 +76,7 @@ export default function index() {
       <div className="w-full">
         <div className="fixed top-10 left-0 w-full px-[2%] flex gap-8 justify-end items-center">
           <Link href="/">
-            <button className="text-[20px] font-[600] hover:text-[#587858] duration-300">
+            <button className="text-[20px] font-[600] hover:text-[#ffce08] duration-300">
               .Home
             </button>
           </Link>
@@ -127,6 +128,7 @@ export default function index() {
           {/* </div> */}
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

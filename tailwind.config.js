@@ -17,6 +17,7 @@ module.exports = {
       },
     },
     screens: {
+      xxs: "375px",
       xs: "601px",
       sm: "768px", // Set custom limit for small screens
       md: "901px",

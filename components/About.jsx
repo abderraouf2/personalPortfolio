@@ -17,7 +17,7 @@ export default function About() {
   return (
     <div
       id="about"
-      className="text-white bg-[#587858] flex justify-center bg px-[1rem] py-[5rem] pb-[10%] clip-path-polygon lg:clip-path-none lg:clip-path-polygon-lg"
+      className="text-white bg-[#03112b] flex justify-center bg px-[1rem] py-[5rem] pb-[10%] clip-path-polygon lg:clip-path-none lg:clip-path-polygon-lg"
     >
       <div className="max-w-[1320px]">
         <motion.h2

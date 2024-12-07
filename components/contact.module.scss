@@ -4,16 +4,16 @@
   display: flex;
   justify-content: center;
   padding: 5% 0;
-  background-color: #587858;
+  background-color: #03112b;
   overflow: hidden;
-
+  position: relative;
   // background-color: #00000023;
   .contactWrapper {
     width: 80%;
     // padding: 5%;
 
     /* From https://css.glass */
-    background: #587858;
+    background: #03112b;
     // border-radius: 16px;
     display: flex;
     flex-direction: column;

@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import styles from "./contact.module.scss";
 import CalendlyPopup from "./CalendlyPopup";
-
+import ParticlesComponent from "./Particles";
 export default function Contact() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -83,6 +83,7 @@ export default function Contact() {
 
   return (
     <div className={styles.letsTalkWrapper} id="contact">
+      <ParticlesComponent id="contactParticles" />
       <motion.div
         ref={container}
         style={{ x }}
