@@ -9,7 +9,19 @@ import Footer from "@/components/Footer";
 
 export default function index() {
   const [isLoading, setIsLoading] = useState(true);
-  const categories = ["Cloud Computing", "Software Development", "SaaS"];
+  const categories = [
+    "Cloud Computing",
+    "Software Development",
+    "SaaS",
+    "Backend",
+    "Deployment",
+    "AI",
+    "Web development",
+    "Software Development",
+    "Object-Oriented Design",
+    "Scalable Software Design",
+    "Clean Code Principles",
+  ];
   const [blogs, setBlogs] = useState([]);
 
   const fetchAllBlogs = async () => {
@@ -119,6 +131,12 @@ export default function index() {
                 <span
                   key={index}
                   className="py-1 px-4 w-[fit-content] mx-1 m-3 rounded-xl bg-[#043873] bg-opacity-10 whitespace-nowrap inline-block"
+                  style={{
+                    background: "rgba(255, 255, 255, 0.22)",
+                    borderRadius: "16px",
+                    boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+                    backdropFilter: "blur(9px)",
+                  }}
                 >
                   {category}
                 </span>

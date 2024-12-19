@@ -64,11 +64,12 @@ export default function ProjectCard({ project }) {
 
   return (
     <div
-      className="w-full max-w-[540px] mx-[auto] mb-[4rem] flex flex-col-reverse sm:max-w-[720px] l:flex-row-reverse l:max-w-[960px]  lg:max-w-[1140px] xl:max-w-[1320px] relative"
+      className="w-full max-w-[540px] mx-[auto] flex flex-col sm:max-w-[720px]  l:max-w-[960px]  lg:max-w-[1140px] xl:max-w-[1320px] relative"
       style={{
-        background:
-          "rgba(255, 255, 255, 0.2)" /* Semi-transparent background */,
-        backdropFilter: 'blur("8px")' /* Frosted glass effect */,
+        background: "rgba(0, 0, 0, 0.22)",
+        borderRadius: "16px",
+        boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+        backdropFilter: "blur(9px)",
         border: "1px solid rgba(255, 255, 255, 0.3)" /* Subtle border */,
         borderRadius: "12px" /* Rounded corners for smoothness */,
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)" /* Soft shadow for depth */,
@@ -77,7 +78,7 @@ export default function ProjectCard({ project }) {
       }}
     >
       <motion.div
-        className="px-[.5rem]  relative l:w-[66.66%]"
+        className=" relative w-full"
         style={{ position: "relative", display: "inline-block" }}
         ref={ref}
         initial={{ opacity: 0, x: 20 }}
@@ -111,7 +112,7 @@ export default function ProjectCard({ project }) {
         </div>
       </motion.div>
       <motion.div
-        className="px-[.5rem]  l:w-[33.33%] "
+        className="  w-full"
         ref={ref}
         initial={{ opacity: 0, x: -20 }}
         animate={controls1}
@@ -128,7 +129,7 @@ export default function ProjectCard({ project }) {
             {description}
           </p>
         </div>
-        <div className="flex items-center my-[2.5rem]">
+        <div className="flex items-center l:hidden my-[2.5rem]">
           {link && (
             <p>
               <a

@@ -21,7 +21,7 @@ export const projects = [
   },
   {
     id: 2,
-    title: "IoT Integration into retail industry software",
+    title: "IoT devices management",
     image: "/assets/images/iot.png",
     technologies: ["nextjs", "framer-motion", "graphql", "postgresql"],
     description:
