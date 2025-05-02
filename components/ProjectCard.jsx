@@ -83,7 +83,7 @@ export default function ProjectCard({ project }) {
         ref={ref}
         initial={{ opacity: 0, x: 20 }}
         animate={controls}
-        transition={{ duration: 0.5, delay: 1 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
       >
         <Image
           src={image}
@@ -116,7 +116,7 @@ export default function ProjectCard({ project }) {
         ref={ref}
         initial={{ opacity: 0, x: -20 }}
         animate={controls1}
-        transition={{ duration: 0.5, delay: 0.6 }}
+        transition={{ duration: 0.5, delay: 0.05 }}
       >
         <h3
           className="text-[2rem] mb-[1.8rem] xs:text-[2.5rem]"

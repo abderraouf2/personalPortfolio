@@ -44,7 +44,7 @@ export default function ServicesCard(props) {
       </h1>
       {mouseOver && (
         <div
-          className="absolute hidden lg:block  p-4 rounded-[10px] z-[8]"
+          className="absolute hidden lg:block  p-4 rounded-[10px] z-[2]"
           style={{
             width: "400px",
             background: "rgba(0, 0, 0, 0.22)",

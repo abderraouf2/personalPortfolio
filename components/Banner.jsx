@@ -49,25 +49,24 @@ export default function Banner() {
             style={{
               fontWeight: "700",
             }}
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
           >
             Abderraouf Mimoune
           </motion.h1>
-          <div>
-            <p
-              className="text-[1.5rem] text-[#c8c8c8] block mb-[3.2rem] leading-[1.5] text-center  md:text-[2rem] lg:text-[2rem] md:leading-[1.2]"
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 0.8, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <p className="text-[1.5rem] text-[#c8c8c8] block mb-[3.2rem] leading-[1.5] text-center  md:text-[2rem] lg:text-[2rem] md:leading-[1.2]">
               Software Engineer <span className="text-[#ffce08]">|</span>{" "}
               Freelancer{" "}
               <span className="text-[#ffce08] hidden xxs:inline-block">|</span>{" "}
               Pentester
             </p>
-          </div>
+          </motion.div>
           <Image
             className="w-[100px] xs:w-[150px] mt-0 h-auto"
             src="/assets/logo.png"

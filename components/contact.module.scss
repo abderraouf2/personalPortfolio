@@ -13,7 +13,10 @@
     // padding: 5%;
 
     /* From https://css.glass */
-    background: #03112b;
+    // background: #03112b;
+    // background-color: #03112b;
+    transition: background-color 0.3s ease;
+    z-index: 10;
     // border-radius: 16px;
     display: flex;
     flex-direction: column;

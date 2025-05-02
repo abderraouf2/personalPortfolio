@@ -1,36 +1,17 @@
-import React, { useRef, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import styles from "./contact.module.scss";
 import CalendlyPopup from "./CalendlyPopup";
 import ParticlesComponent from "./Particles";
-export default function Contact() {
+export default function Contact({ mainRef }) {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
 
-  const container = useRef(null);
-  const { scrollY } = useScroll();
-  const yOffset = useRef(0);
-
-  const y = useTransform(scrollY, (value) => {
-    if (container.current) {
-      const elementTop = container.current.offsetTop - 500;
-      const elementBottom = elementTop + container.current.offsetHeight;
-      const scrollYOffset = scrollY.get();
-
-      if (
-        scrollYOffset + window.innerHeight > elementTop &&
-        scrollYOffset < elementBottom
-      ) {
-        yOffset.current = scrollYOffset - elementTop;
-      }
-    }
-    return yOffset.current;
-  });
-
-  const x = useTransform(y, [0, 300], ["100%", "0%"]);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, margin: "-100px" });
 
   const validateForm = () => {
     let isValid = true;
@@ -81,14 +62,22 @@ export default function Contact() {
     console.log(data);
   };
 
+  useEffect(() => {
+    console.log({ isInView });
+  }, [isInView]);
+
   return (
     <div className={styles.letsTalkWrapper} id="contact">
       <ParticlesComponent id="contactParticles" />
       <motion.div
-        ref={container}
-        style={{ x }}
-        transition={{ duration: 2.5 }}
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
         className={styles.contactWrapper}
+        style={{
+          backgroundColor: isInView ? "#03112b" : "transparent",
+        }}
       >
         <div>
           <p className={styles.p}>want to start a project?</p>

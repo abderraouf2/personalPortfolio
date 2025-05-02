@@ -25,8 +25,8 @@ export default function Projects() {
     // Check window boundaries
     const windowWidth = window.innerWidth;
 
-    if (e.clientX + 500 >= windowWidth) {
-      setMousePosition({ x: x - 500, y });
+    if (e.clientX + 600 >= windowWidth) {
+      setMousePosition({ x: x - 650, y });
     } else {
       setMousePosition({ x, y });
     }
@@ -39,7 +39,20 @@ export default function Projects() {
   };
 
   return (
-    <div className="pt-[5rem] px-[1rem]">
+    <div className="pt-[5rem] px-[1rem] relative">
+      {/* {hoveredProject && (
+        <div
+          style={{
+            position: "absolute",
+            top: `${mousePosition.y}px`,
+            left: `${mousePosition.x}px`,
+            zIndex: 999,
+            pointerEvents: "none",
+          }}
+        >
+          <ProjectCard project={hoveredProject} />
+        </div>
+      )} */}
       <motion.h2
         ref={ref}
         initial={{ opacity: 0, x: -10 }}
@@ -61,20 +74,22 @@ export default function Projects() {
         }
       </div>
 
-      <div className="w-full hidden l:grid grid-cols-3 gap-0 lg:w-[90%] my-0 mx-[auto] sm:max-w-[720px] l:max-w-[960px] lg:max-w-[1140px] xl:max-w-[1320px]">
+      <div className="w-full hidden l:flex flex-col gap-0 lg:w-[90%] my-0 mx-[auto] sm:max-w-[720px] l:max-w-[960px] lg:max-w-[1140px] xl:max-w-[1320px] relative">
         {projects.map((project, index) => (
           <div
             key={project.id}
-            className={`p-4 flex flex-col items-center justify-center relative ${
-              index < 3 ? "" : "border-t"
-            } ${index % 3 === 0 ? "" : "border-l"} border-gray-300`}
+            className={`p-4 flex items-center justify-between justify-center border-b duration-500 ${
+              index == 0 ? "border-t" : ""
+            }  border-gray-300 ${
+              hoveredProject === project ? "scale-110" : ""
+            }`}
             onMouseMove={(e) => handleMouseMove(e, project)}
             onMouseLeave={handleMouseLeave}
           >
-            <h1 className="text-[5rem] font-semibold p-10">{project.title}</h1>
-            <div className="flex items-center my-[2.5rem]">
+            <h1 className="text-[4.5rem] font-[500] p-10">{project.title}</h1>
+            <div className="flex items-center justify-end  my-[2.5rem]">
               {hoveredProject === project && (
-                <div className="absolute bottom-8 flex items-center my-[2.5rem] mx-auto w-2/3 left-1/2 transform -translate-x-1/2">
+                <div className=" flex items-center gap-4 transform ">
                   {project.link && (
                     <p>
                       <a
@@ -110,16 +125,20 @@ export default function Projects() {
             </div>
             {hoveredProject === project && (
               <div
+                className="absolute hidden lg:block  rounded-[10px] z-[2000]"
                 style={{
                   position: "absolute",
                   width: "450px",
                   height: "fit-content",
-                  transform: "translateY(-40%)",
+                  transform: `translateY(${
+                    projects.length - 1 === index ? "-90%" : "-40%"
+                  })`,
                   top: `${mousePosition.y}px`,
                   left: `${mousePosition.x + 20}px`,
                   pointerEvents: "none",
                   boxShadow: "0px 0px 8px 2px #c8c8c8",
                   zIndex: 1000,
+                  // backgroundColor: "red",
                   borderRadius: "12px" /* Rounded corners for smoothness */,
                 }}
               >
