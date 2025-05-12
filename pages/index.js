@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import Lenis from "@studio-freight/lenis";
 import Link from "next/link";
 import ScrollProgres from "@/components/ScrollProgres";
+import WorkExp from "@/components/WorkExp";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -59,6 +60,7 @@ export default function Home() {
           <Banner />
         </div>
         <About />
+        <WorkExp />
         <Projects />
         <Services />
         <Contact mainRef={mainRef} />
