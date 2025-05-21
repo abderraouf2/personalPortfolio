@@ -137,26 +137,26 @@ export default function ScrollTimeline() {
               <div
                 className={`relative l:w-xl xl:w-4xl w-full max-w-4xl l:max-w-6xl lg:max-w-2xl xl:max-w-4xl p-8 rounded-2xl shadow-xl transition-all duration-500 ease-in-out ${
                   activeIndex === index
-                    ? "bg-blue-100 scale-110 text-black"
-                    : "bg-white scale-95 text-gray-400"
+                    ? " scale-110 text-lightGray"
+                    : " scale-95 text-gray-400"
                 } ${
                   index % 2 === 0 ? "text-left mr-16" : "text-left lg:ml-16"
                 }`}
               >
                 <div
                   className={`text-xl font-extrabold mb-1 ${
-                    activeIndex === index ? "text-[#03112b]" : "text-gray-400"
+                    activeIndex === index ? "text-[#ffcc39]" : "text-gray-400"
                   }`}
                 >
                   {step.id}
                 </div>
-                <h2 className="text-4xl font-bold mb-1">{step.title}</h2>
-                <div className="text-sm italic mb-2">
+                <h2 className="text-6xl font-bold mb-1">{step.title}</h2>
+                <div className="text-lg italic mb-8 mt-4">
                   {step.date} – {step.location}
                 </div>
                 <ul className="list-disc pl-5 space-y-1">
                   {step.content.map((point, idx) => (
-                    <li key={idx} className="text-base leading-relaxed">
+                    <li key={idx} className="text-base text-xl leading-relaxed">
                       {point}
                     </li>
                   ))}
