@@ -1,5 +1,12 @@
 import { db, storage } from "@/lib/firebaseConfig";
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  getDocs,
+  query,
+  orderBy,
+  serverTimestamp,
+} from "firebase/firestore";
 import {
   getStorage,
   ref,
@@ -28,48 +35,39 @@ export default async function handler(req, res) {
       bannerImg: pathToImg,
       timeToRead: timeToRead,
       content: content,
+      createdAt: serverTimestamp(),
     });
     console.log("Document written with ID: ", docRef.id);
 
     res.status(200).json({ msg: "Success" });
   }
   if (req.method === "GET") {
-    const querySnapshot = await getDocs(collection(db, "blogs"));
+    const q = query(collection(db, "blogs"), orderBy("createdAt", "desc"));
+    const querySnapshot = await getDocs(q);
     const storage = getStorage();
     let blogs = [];
 
-    const promises = querySnapshot.docs.map(async (doc) => {
+    for (const doc of querySnapshot.docs) {
       try {
-        const url = await getDownloadURL(ref(storage, doc.data().bannerImg));
-        let newBlg = {
+        const data = doc.data();
+        const url = await getDownloadURL(ref(storage, data.bannerImg));
+
+        const newBlog = {
           id: doc.id,
-          title: doc.data().title,
-          description: doc.data().description,
-          timeToRead: doc.data().timeToRead,
-          categories: doc.data().categories,
+          title: data.title,
+          description: data.description,
+          timeToRead: data.timeToRead,
+          categories: data.categories,
           bannerImg: url,
         };
-        console.log({ newBlg });
-        blogs.push(newBlg);
 
-        // This can be downloaded directly:
-        const xhr = new XMLHttpRequest();
-        xhr.responseType = "blob";
-        xhr.onload = (event) => {
-          const blob = xhr.response;
-        };
-        xhr.open("GET", url);
-        xhr.send();
-
-        // Or inserted into an <img> element
-        // const img = document.getElementById("myimg");
-        // img.setAttribute("src", url);
+        blogs.push(newBlog);
       } catch (error) {
         console.error("Error fetching download URL:", error);
       }
-    });
+    }
 
-    await Promise.all(promises);
+    // await Promise.all(promises);
 
     console.log({ blogs });
     res.status(200).json({ msg: "GET request", data: blogs });
